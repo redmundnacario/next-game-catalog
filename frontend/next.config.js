@@ -2,8 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   publicRuntimeConfig: {
-    RAPID_API_KEY: process.env.RAPID_API_KEY,
-    RAPID_API_HOST: process.env.RAPID_API_HOST,
+    RAWG_KEY: process.env.RAWG_KEY,
   },
 };
 

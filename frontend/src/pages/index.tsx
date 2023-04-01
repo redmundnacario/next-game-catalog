@@ -10,7 +10,7 @@ import useFetchGame from '@hooks/useFetchGame';
 
 const Page: NextPage = () => {
   // const { gamesList, isLoading, error } = useFetchGame({});
-  const { gamesList, isLoading, error } = useFetchGame({ id: 452 });
+  const { gamesList, isLoading, error } = useFetchGame({});
   console.log(gamesList);
   console.log(isLoading);
   console.log(error);

@@ -1,4 +1,4 @@
-import { BASE_URL, RAPID_API_HOST, RAPID_API_KEY } from '@configs';
+import { BASE_URL, RAPID_API_HOST, RAPID_API_KEY, RAWG_KEY } from '@configs';
 import { GamesListType, SingleGameType } from '@models/entities';
 import { ErrorResponse } from '@utils/errorResponse';
 
@@ -6,14 +6,16 @@ export const getGamesList = async (
   queryParams?: URLSearchParams
 ): Promise<GamesListType> => {
   const result = await fetch(
-    `${BASE_URL}/games${queryParams ? `?${queryParams.toString()}` : ''}`,
+    `${BASE_URL}/games?key=${RAWG_KEY}${
+      queryParams ? `&${queryParams.toString()}` : ''
+    }`,
     {
       method: 'GET',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        'X-RapidAPI-Key': RAPID_API_KEY ?? '',
-        'X-RapidAPI-Host': RAPID_API_HOST ?? '',
+        // 'X-RapidAPI-Key': RAPID_API_KEY ?? '',
+        // 'X-RapidAPI-Host': RAPID_API_HOST ?? '',
       },
     }
   );
@@ -26,13 +28,13 @@ export const getGamesList = async (
 };
 
 export const getGameById = async (gameId: number): Promise<SingleGameType> => {
-  const result = await fetch(`${BASE_URL}/game?id=${gameId}`, {
+  const result = await fetch(`${BASE_URL}/games/${gameId}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      'X-RapidAPI-Key': RAPID_API_KEY ?? '',
-      'X-RapidAPI-Host': RAPID_API_HOST ?? '',
+      // 'X-RapidAPI-Key': RAPID_API_KEY ?? '',
+      // 'X-RapidAPI-Host': RAPID_API_HOST ?? '',
     },
   });
 
