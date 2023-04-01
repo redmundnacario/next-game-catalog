@@ -1,4 +1,4 @@
-import { BASE_URL, RAPID_API_HOST, RAPID_API_KEY, RAWG_KEY } from '@configs';
+import { BASE_URL, RAWG_KEY } from '@configs';
 import { GamesListType, SingleGameType } from '@models/entities';
 import { ErrorResponse } from '@utils/errorResponse';
 
@@ -14,8 +14,6 @@ export const getGamesList = async (
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        // 'X-RapidAPI-Key': RAPID_API_KEY ?? '',
-        // 'X-RapidAPI-Host': RAPID_API_HOST ?? '',
       },
     }
   );
@@ -33,8 +31,6 @@ export const getGameById = async (gameId: number): Promise<SingleGameType> => {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      // 'X-RapidAPI-Key': RAPID_API_KEY ?? '',
-      // 'X-RapidAPI-Host': RAPID_API_HOST ?? '',
     },
   });
 
