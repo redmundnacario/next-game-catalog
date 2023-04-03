@@ -14,7 +14,6 @@ type SingleGamePageType = {
 const SingleGamePage: React.FC<SingleGamePageType> = ({ data }) => {
   const router = useRouter();
   const images = data.images;
-  console.log(data);
   return (
     <div className={styles.singleGamePage}>
       <div className={styles.rowSingleGame}>
@@ -41,7 +40,7 @@ const SingleGamePage: React.FC<SingleGamePageType> = ({ data }) => {
                 }}
               >
                 <i className="fa fa-chevron-left"></i>
-                View more
+                Back
               </Button>
             </div>
           </div>
