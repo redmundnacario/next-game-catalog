@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "npx eslint .",
     "format": "npx prettier --write .",
-    "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test": "jest"
   },
   "dependencies": {
     "next": "13.2.4",

@@ -1,38 +1,88 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<br />
 
-First, run the development server:
+## The Next Game Catalog by Redmund Nacario
+
+<br />
+
+Libraries/Tech used
+
+- NextJS, ReactJS
+- useContext for cleaner code and state management
+- useSWR for fetching data
+- sass and css modules
+- jest and react testing library for unit testing
+
+What could you do better in your code next iteration?
+
+- completes code coverage
+- implements separate backend to showcase backend skill
+- completes targets. Some of the target features were not implemented due to time constraint
+
+Any other notes you feel relevant for the evaluation of your solution.
+
+- consider the days of implementation. If there are more days I can do more. :)
+- usage of typescript, and useContext
+- created react hooks
+- CSS / SCSS - created mixins for mobile responsiveness
+- reused some components like button, dropdown, and page shell
+- testing - mocking of useRouter, function
+- configuration of eslint, prettier, and husky for linting, formatting, ang git hook
+- deployment :) Please see link
+
+### Deployment
+
+Deployed at: [https://next-game-catalog-by-redmund-nacario.netlify.app/](https://next-game-catalog-by-redmund-nacario.netlify.app/)
+
+<br />
+
+### Setting up
+
+Clone this repo.
+
+In your terminal, go to the
+
+```bash
+cd <repo-name>
+```
+
+Install the dependencies and devDependencies
+
+```bash
+npm install
+```
+
+Create "env.local" file and set the variable present in "sample.env.local".
+
+Run local server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open the browser with url [localhost](http://localhost:3000)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<br />
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### You can also run the following scripts:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. For running test
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run test
+```
 
-## Learn More
+2. For running prettier format
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run format
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. For running eslint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm run lint
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thank you! :D
