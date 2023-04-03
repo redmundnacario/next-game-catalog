@@ -1,25 +1,25 @@
-// import Head from 'next/head';
-// import Image from 'next/image';
-// import { Inter } from 'next/font/google';
-// import styles from '@styles/Home.module.css';
-
 import { NextPage } from 'next';
-// import useFetchGame from '@hooks/useFetchGame';
+
 import PageShell from '@components/common/PageShell';
 import { SearchBar } from '@components/common/SearchBar';
 import Toolbar from '@components/common/Toolbar';
+import GameList from '@components/containers/game/GameList';
 
-// const inter = Inter({ subsets: ['latin'] });
+import {
+  useGameListContext,
+  withGameListContextProvider,
+} from '@contexts/GameListContext';
 
 const Page: NextPage = () => {
-  // const { gamesList, isLoading, error } = useFetchGame({});
-  // const { gamesList, isLoading, error } = useFetchGame({});
-  // console.log(gamesList);
-  // console.log(isLoading);
-  // console.log(error);
-  // // useEffect(() => {
-  //   void getGameById(452);
-  // }, []);
+  const {
+    data,
+    isLoading,
+    genre,
+    setSearch,
+    setPlatform,
+    setGenre,
+    setSortBy,
+  } = useGameListContext();
   return (
     <PageShell
       title="Find & track the best free-to-play games!"
@@ -27,16 +27,28 @@ const Page: NextPage = () => {
     >
       <div className="row">
         <div className="col-center">
-          <SearchBar />
+          <SearchBar handleChange={setSearch} />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <Toolbar
+            {...{
+              genre,
+              setPlatform,
+              setGenre,
+              setSortBy,
+            }}
+          />
         </div>
       </div>
       <div className="row">
         <div className="col-center">
-          <Toolbar />
+          <GameList {...{ data, isLoading }} />
         </div>
       </div>
     </PageShell>
   );
 };
 
-export default Page;
+export default withGameListContextProvider(Page);

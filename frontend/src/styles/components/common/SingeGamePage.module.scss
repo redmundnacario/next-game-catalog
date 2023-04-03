@@ -1,0 +1,48 @@
+.singleGamePage {
+  border: 1px solid lightgray;
+  padding: 1rem;
+}
+
+.rowSingleGame {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 1rem;
+}
+.rowSingleGame > .imageContainerSmall {
+  margin-bottom: 1rem;
+}
+
+.description {
+  display: flex;
+  > div {
+    padding: 1rem;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.imageContainerSmall {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+
+.imageContainer > div,
+.imageContainerSmall > div {
+  position: unset !important;
+}
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}

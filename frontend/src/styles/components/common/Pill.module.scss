@@ -1,0 +1,20 @@
+.pill {
+  background-color: #1877f2;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  height: 36px;
+  line-height: 20px;
+  width: fit-content;
+  padding: 0 16px 0 16px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  cursor: pointer;
+}

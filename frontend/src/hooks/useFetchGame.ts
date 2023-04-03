@@ -1,29 +1,26 @@
 import useSWR from 'swr';
 
-import { GamesListType, SingleGameType } from '@models/entities';
-import { getGameById, getGamesList } from '@services/freeToGame';
+import { SingleGameWithImagesType } from '@models/entities';
+import { getGameById, getGameScreenshotsById } from '@services/freeToGame';
 
 type UseFetchGamePropType = {
-  id?: number;
+  id: number;
 };
 
 type UseFetchGameReturnType = {
-  gamesList: GamesListType | SingleGameType | undefined;
+  data: SingleGameWithImagesType | undefined;
   isLoading: boolean;
   error: boolean;
 };
 
 const useFetchGame = ({ id }: UseFetchGamePropType): UseFetchGameReturnType => {
-  const url = id ? `/getGame?id=${id}` : '/getGamesList';
+  const url = id ? `/getGame?id=${id}` : null;
 
-  const fetcher = async (): Promise<GamesListType | SingleGameType> => {
-    let response;
-    if (id) {
-      response = await getGameById(id);
-    } else {
-      response = await getGamesList();
-    }
-    return response;
+  const fetcher = async (): Promise<SingleGameWithImagesType | undefined> => {
+    const response = await getGameById(id);
+    const images = await getGameScreenshotsById(id);
+
+    return { ...response, images };
   };
 
   const { data, isValidating, error } = useSWR(url, fetcher, {
@@ -36,9 +33,9 @@ const useFetchGame = ({ id }: UseFetchGamePropType): UseFetchGameReturnType => {
   });
 
   return {
-    gamesList: data,
+    data,
     isLoading: isValidating,
-    error: error,
+    error,
   };
 };
 

@@ -1,40 +1,23 @@
 export type SingleGameType = {
   id: number;
-  title: string;
-  thumbnail: string;
-  status: string;
-  short_description: string;
-  description: string;
-  game_url: string;
-  genre: string;
-  platform: string;
-  publisher: string;
-  developer: string;
-  release_date: string;
-  freetogame_profile_url: string;
-  minimum_system_requirements: {
-    os: string;
-    processor: string;
-    memory: string;
-    graphics: string;
-    storage: string;
-  };
-  screenshots: [
-    {
-      id: number;
-      image: string;
-    },
-    {
-      id: number;
-      image: string;
-    },
-    {
-      id: number;
-      image: string;
-    },
-    {
-      id: number;
-      image: string;
-    }
-  ];
+  slug: string;
+  name: string;
+  name_original: string;
+  background_image: string;
+  background_image_additional: string;
+  rating: number;
+  description_raw: string;
 };
+
+export type SingleGameWithImagesType = SingleGameType & {
+  images: SingleGameImagesListType;
+};
+
+export type SingleGameImagesType = {
+  id: number;
+  image: string;
+  width: number;
+  height: number;
+};
+
+export type SingleGameImagesListType = Array<SingleGameImagesType>;

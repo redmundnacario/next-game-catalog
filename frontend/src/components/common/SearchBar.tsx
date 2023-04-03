@@ -2,15 +2,21 @@ import React from 'react';
 
 import styles from '@styles/components/common/SearchBar.module.scss';
 
-export const SearchBar: React.FC = () => {
+type SearchBarPropsType = {
+  handleChange: (value: string) => void;
+};
+
+export const SearchBar: React.FC<SearchBarPropsType> = ({ handleChange }) => {
   const [searchVal, setSearchVal] = React.useState('');
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchVal(e.target.value);
+    handleChange(e.target.value);
   };
 
   const handleClearBtn = () => {
     setSearchVal('');
+    handleChange('');
   };
 
   // const filteredProducts = props.products.filter((game) => {

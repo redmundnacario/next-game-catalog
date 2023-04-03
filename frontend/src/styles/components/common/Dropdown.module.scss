@@ -1,5 +1,13 @@
 @import 'src/styles/media_query';
 
+.dropdown {
+  display: flex;
+  gap: 1rem;
+  > div {
+    align-self: center;
+  }
+}
+
 .inputSelect {
   border: none;
   background-color: #ffffff;
@@ -21,6 +29,6 @@
     width: fit-content;
   }
   @include md {
-    width: 12vh;
+    width: 200px;
   }
 }

@@ -1,35 +1,37 @@
 import React, { FC } from 'react';
 
+import { OptionType } from '@models/views';
+
 import styles from '@styles/components/common/Dropdown.module.scss';
 
 type DropdownPropsType = {
-  // handleOnChange: (value: string) => void;
   label: string;
-  options: Array<{
-    text: string;
-    value: string | number;
-  }>;
+  options: Array<OptionType>;
+  handleSelect: (value: number) => void;
+  isMultiSelect?: boolean;
 };
 
 const Dropdown: FC<DropdownPropsType> = (props) => {
-  const {
-    // handleOnChange,
-    label,
-    options,
-  } = props;
+  const { label, options, handleSelect, isMultiSelect = false } = props;
   return (
-    <div>
+    <div className={styles.dropdown}>
       <div>{label}</div>
       <select
         data-testid={'select-sort-type'}
         className={styles.inputSelect}
         name="sort-type"
         id="sort-type"
-        defaultValue="newest"
-        onChange={() => {
-          // handleOnChange(e.target.value);
+        onChange={(e) => {
+          const { value } = e.target as HTMLSelectElement;
+          if (value) {
+            handleSelect(parseInt(value, 10));
+          }
+          if (isMultiSelect) {
+            e.target.value = '';
+          }
         }}
       >
+        <option value="">Choose here...</option>
         {options.map((option, index) => (
           <option
             key={index}
