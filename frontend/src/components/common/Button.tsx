@@ -7,12 +7,10 @@ type ButtonPropsType = {
   onClick: () => void;
 };
 
-const Button: React.FC<ButtonPropsType> = ({ children, onClick }) => {
+export const Button: React.FC<ButtonPropsType> = ({ children, onClick }) => {
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button className={styles.button} onClick={onClick} data-testid="button">
       {children}
     </button>
   );
 };
-
-export default Button;

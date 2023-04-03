@@ -1,2 +1,2 @@
 export * from './freeToGameConstants';
-export * from './GameOptionsConstants';
+export * from './gameOptionsConstants';

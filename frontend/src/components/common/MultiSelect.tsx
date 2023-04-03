@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { OptionType } from '@models/views';
-import Dropdown from './DropDown';
+import { Dropdown } from './Dropdown';
 import SuggestionList from './SuggestionList';
 
 type MultiSelectPropsType = {
@@ -11,7 +11,7 @@ type MultiSelectPropsType = {
   handleSelect: (value: Array<number>) => void;
 };
 
-const MultiSelect: React.FC<MultiSelectPropsType> = (props) => {
+export const MultiSelect: React.FC<MultiSelectPropsType> = (props) => {
   const { label, options, selectedOptions, handleSelect } = props;
 
   const handleSelectMultiple = (value: number) => {
@@ -23,7 +23,7 @@ const MultiSelect: React.FC<MultiSelectPropsType> = (props) => {
   };
 
   return (
-    <div>
+    <div data-testid={'multi-select'}>
       <Dropdown
         label={label}
         options={options}
@@ -38,5 +38,3 @@ const MultiSelect: React.FC<MultiSelectPropsType> = (props) => {
     </div>
   );
 };
-
-export default MultiSelect;

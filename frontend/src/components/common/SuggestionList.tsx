@@ -19,7 +19,7 @@ const SuggestionList = (props: SuggestionListPropsType) => {
   );
 
   return (
-    <div className={styles.suggestionList}>
+    <div data-testid="suggestion-list" className={styles.suggestionList}>
       {filteredOptions.length > 0
         ? filteredOptions.map((item, index) => (
             <Pill

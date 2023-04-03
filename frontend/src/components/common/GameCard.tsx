@@ -2,9 +2,9 @@ import { useRouter } from 'next/router';
 import React, { useLayoutEffect, useRef, useState } from 'react';
 
 import { GameType } from '@models/entities';
+import { Button } from './Button';
 
 import styles from '@styles/components/common/GameCard.module.scss';
-import Button from './Button';
 
 type GameCardPropsType = {
   data: GameType;
@@ -24,6 +24,7 @@ const GameCard = ({ data }: GameCardPropsType) => {
 
   return (
     <div
+      data-testid="game-card"
       ref={ref}
       style={{
         height: width,
@@ -40,6 +41,7 @@ const GameCard = ({ data }: GameCardPropsType) => {
         <div className={styles.title}>{data.name}</div>
         <div className={styles.action}>
           <Button
+            data-testid="button"
             onClick={() => {
               router.push(`/${data.id}`);
             }}

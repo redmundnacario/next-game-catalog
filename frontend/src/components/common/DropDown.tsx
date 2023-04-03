@@ -11,7 +11,7 @@ type DropdownPropsType = {
   isMultiSelect?: boolean;
 };
 
-const Dropdown: FC<DropdownPropsType> = (props) => {
+export const Dropdown: FC<DropdownPropsType> = (props) => {
   const { label, options, handleSelect, isMultiSelect = false } = props;
   return (
     <div className={styles.dropdown}>
@@ -36,7 +36,7 @@ const Dropdown: FC<DropdownPropsType> = (props) => {
           <option
             key={index}
             value={option.value}
-            data-testid={'newest-option'}
+            data-testid={`option-${index}`}
           >
             {option.text}
           </option>
@@ -45,5 +45,3 @@ const Dropdown: FC<DropdownPropsType> = (props) => {
     </div>
   );
 };
-
-export default Dropdown;

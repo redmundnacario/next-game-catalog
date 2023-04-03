@@ -14,7 +14,7 @@ const Pill: React.FC<PillPropsType> = ({
   iconClassName,
 }) => {
   return (
-    <div className={styles.pill}>
+    <div data-testid="pill" className={styles.pill}>
       {text}
       {handleAction && (
         <i

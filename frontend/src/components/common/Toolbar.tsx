@@ -1,10 +1,10 @@
 import React from 'react';
-import Dropdown from './DropDown';
+import { Dropdown } from './Dropdown';
 
 import { genreOptions, platformOptions, sortOptions } from '@configs';
 
 import styles from '@styles/components/common/Toolbar.module.scss';
-import MultiSelect from './MultiSelect';
+import { MultiSelect } from './MultiSelect';
 
 type ToolbarPropsType = {
   genre: Array<number>;

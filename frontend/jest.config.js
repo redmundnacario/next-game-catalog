@@ -16,12 +16,15 @@ const customJestConfig = {
   moduleDirectories: ['node_modules', 'src'],
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
-    //   '^@components(.*)$': '<rootDir>/src/components$1',
-    //   '^@hooks(.*)$': '<rootDir>/src/hooks$1',
-    //   '^@models(.*)$': '<rootDir>/src/models$1',
-    //   '^@services(.*)$': '<rootDir>/src/services$1',
+    '^@components(.*)$': '<rootDir>/src/components$1',
+    '^@contexts(.*)$': '<rootDir>/src/contexts$1',
+    '^@configs(.*)$': '<rootDir>/src/configs$1',
+    '^@hooks(.*)$': '<rootDir>/src/hooks$1',
+    '^@models(.*)$': '<rootDir>/src/models$1',
     '^@pages(.*)$': '<rootDir>/src/pages$1',
-    //   '^@store(.*)$': '<rootDir>/src/redux$1',
+    '^@services(.*)$': '<rootDir>/src/services$1',
+    '^@utils(.*)$': '<rootDir>/src/utils$1',
+    '^@tests(.*)$': '<rootDir>/tests$1',
   },
 };
 

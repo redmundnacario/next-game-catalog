@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 import { SingleGameWithImagesType } from '@models/entities';
-import Button from './Button';
+import { Button } from './Button';
 
 import styles from '@styles/components/common/SingeGamePage.module.scss';
 
